@@ -57,7 +57,7 @@ module Authorization
         self
       else
         # for Rails < 3: scope, after setting proxy_options
-        self.klass.scoped(@finder_options)
+        self.klass.where(nil).apply_finder_options(@finder_options, true)
       end
     end
 
